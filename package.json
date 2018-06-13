@@ -1,0 +1,21 @@
+{
+    "name": "koa-blog",
+    "version": "1.0.0",
+    "description": "A Koa Blog",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "koa",
+        "async"
+    ],
+    "author": "imizao",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/imizao/koa-blog.git"
+    },
+    "dependencies": {
+        "koa": "2.0.0"
+    }
+}
