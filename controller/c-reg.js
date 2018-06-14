@@ -7,7 +7,7 @@ const fs = require('fs')
 
 exports.getSignup = async ctx => {
     await checkNotLogin(ctx)
-    await ctx.render('signup', {
+    await ctx.render('reg', {
         session: ctx.session,
     })
 }
