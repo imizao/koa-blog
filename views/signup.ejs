@@ -1,9 +1,10 @@
 <html>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" href="./css/base.css">
 	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-	<body>
+<body>
 		
-			<div class="message">登录成功</div>
+	<div class="message">登录成功</div>
 	<div class="container">
 		<form class="form create" method="post">
 			<div>
@@ -109,7 +110,8 @@
 					   if(msg.code == 200){
 						   fade('注册成功')
 						   setTimeout(function(){
-							   window.location.href = "http://www.isjs.net"	  
+								//  window.location.href = "http://www.isjs.net"
+								alert('跳到登录页');	  
 						   },1000)
 
 					   }else{
@@ -123,5 +125,5 @@
 			}
 		})	
 	</script>
-	</body>
+</body>
 </html>
