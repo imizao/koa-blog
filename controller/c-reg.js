@@ -12,7 +12,7 @@ exports.getSignup = async ctx => {
     })
 }
 exports.postSignup = async ctx => {
-    let { name, password, repeatpass, avator } = ctx.request.body
+    let { name, password, repeatpass, avatar } = ctx.request.body
     await userModel.findDataByName(name)
         .then(async (result) => {
             console.log(result)
@@ -35,7 +35,7 @@ exports.postSignup = async ctx => {
                     message: '两次输入的密码不一致'
                 };
             } else {
-                let base64Data = avator.replace(/^data:image\/\w+;base64,/, "");
+                let base64Data = avatar.replace(/^data:image\/\w+;base64,/, "");
                 let dataBuffer = new Buffer(base64Data, 'base64');
                 let getName = Number(Math.random().toString().substr(3)).toString(36) + Date.now()
                 let upload = await new Promise((reslove, reject) => {

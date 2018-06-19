@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 var config = require('../config/config');
 
+// 创建池，提升性能
 var pool = mysql.createPool({
   host: config.host,
   user: config.username,
@@ -22,6 +23,7 @@ let query = ( sql, values ) => {
           } else {
             resolve( rows )
           }
+          // 释放链接
           connection.release()
         })
       }
