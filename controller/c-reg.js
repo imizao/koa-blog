@@ -23,13 +23,14 @@ exports.postSignup = async ctx => {
                     //处理err
                     console.log(error)
                 }
-                // 用户存在
+                // 返回前端，用户存在
                 ctx.body = {
                     code: 500,
                     message: '用户存在'
                 };;
 
             } else if (password !== repeatpass || password === '') {
+                // 返回前端，密码不一致
                 ctx.body = {
                     code: 500,
                     message: '两次输入的密码不一致'
@@ -52,15 +53,16 @@ exports.postSignup = async ctx => {
                 if (upload) {
                     await userModel.insertData([name, md5(password), getName + '.png', moment().format('YYYY-MM-DD HH:mm:ss')])
                         .then(res => {
-                            console.log('注册成功', res)
-                            //注册成功
+                            console.log('注册成功res', res)
+                            // 返回前端，注册成功
                             ctx.body = {
                                 code: 200,
                                 message: '注册成功'
                             };
                         })
                 } else {
-                    consol.log('头像上传失败')
+                    console.log('头像上传失败')
+                    // 返回前端，头像上传失败
                     ctx.body = {
                         code: 500,
                         message: '头像上传失败'

@@ -49,7 +49,7 @@ let users =
      id INT NOT NULL AUTO_INCREMENT,
      name VARCHAR(100) NOT NULL COMMENT '用户名',
      pass VARCHAR(100) NOT NULL COMMENT '密码',
-     avator VARCHAR(100) NOT NULL COMMENT '头像',
+     avatar VARCHAR(100) NOT NULL COMMENT '头像',
      moment VARCHAR(100) NOT NULL COMMENT '注册时间',
      PRIMARY KEY ( id )
     );`
@@ -65,7 +65,7 @@ let posts =
      moment VARCHAR(100) NOT NULL COMMENT '发表时间',
      comments VARCHAR(200) NOT NULL DEFAULT '0' COMMENT '文章评论数',
      pv VARCHAR(40) NOT NULL DEFAULT '0' COMMENT '浏览量',
-     avator VARCHAR(100) NOT NULL COMMENT '用户头像',
+     avatar VARCHAR(100) NOT NULL COMMENT '用户头像',
      PRIMARY KEY(id)
     );`
 
@@ -76,7 +76,7 @@ let comment =
      content TEXT(0) NOT NULL COMMENT '评论内容',
      moment VARCHAR(40) NOT NULL COMMENT '评论时间',
      postid VARCHAR(40) NOT NULL COMMENT '文章id',
-     avator VARCHAR(100) NOT NULL COMMENT '用户头像',
+     avatar VARCHAR(100) NOT NULL COMMENT '用户头像',
      PRIMARY KEY(id) 
     );`
 
