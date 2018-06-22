@@ -48,8 +48,9 @@ app.use(bodyParser({
 
 //  路由
 
-app.use(require('./routers/reg.js').routes())
+app.use(require('./routers/index.js').routes())
 app.use(require('./routers/login.js').routes())
+app.use(require('./routers/reg.js').routes())
 
 
 app.listen(3000)

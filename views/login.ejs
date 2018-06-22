@@ -32,6 +32,17 @@
 		</form>
 	</div>
 	<script>
+		function fade(txt){
+			$('.message').text(txt)
+			$('.message').animate({
+				top: '10px'
+			})
+			setTimeout(function(){
+				$('.message').animate({
+					top: '-50px'
+				})
+			},1500)
+		}
 		$('.submit').click(function () {
 			$.ajax({
 				url: '/login',
@@ -41,7 +52,15 @@
 				},
 				type: "POST",
 				success: function (res) {
-					console.log(res);
+					if(msg.code == 200){
+						   fade('登录成功(＾－＾)V')
+						   setTimeout(function(){
+								window.location.href = "/index"
+						   },1000)
+
+					   }else{
+ 							fade(msg.message)
+					   }
 				}
 			})
 		})

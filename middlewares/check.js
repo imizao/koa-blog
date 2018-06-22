@@ -3,7 +3,7 @@ module.exports ={
   // 已经登录了
   checkNotLogin: (ctx) => {
     if (ctx.session && ctx.session.user) {     
-      ctx.redirect('/home');
+      ctx.redirect('/index');
       return false;
     }
     return true;
