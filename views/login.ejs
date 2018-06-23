@@ -52,15 +52,14 @@
 				},
 				type: "POST",
 				success: function (res) {
-					if(msg.code == 200){
-						   fade('登录成功(＾－＾)V')
-						   setTimeout(function(){
-								window.location.href = "/index"
-						   },1000)
-
-					   }else{
- 							fade(msg.message)
-					   }
+					if(res.code == 200){
+						fade('登录成功(＾－＾)V')
+						setTimeout(function(){
+							window.location.href = "/index"
+						},1000)
+					}else{
+					fade(res.message)
+					}
 				}
 			})
 		})
