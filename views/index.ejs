@@ -9,7 +9,15 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
+<script>
+  var s = '<%- session.user %>';
+  console.log(s);
+</script>
 <body >
+    <div><%- session %></div>
+  <% if(session) { %>
+  <div><%= session.user %></div>
+  <% } %>
   <div class="mz-bg"></div>
   <header class="mz-header">
     <div class="mz-top">
