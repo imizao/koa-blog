@@ -91,7 +91,7 @@ createTable(comment)
 
 // 注册用户
 exports.insertData = ( value ) => {
-  let _sql = "insert into users set name=?,pass=?,avator=?,moment=?;"
+  let _sql = "insert into users set name=?,pass=?,avatar=?,moment=?;"
   return query( _sql, value )
 }
 // 删除用户
@@ -106,7 +106,7 @@ exports.findUserData = ( name ) => {
 }
 // 发表文章
 exports.insertPost = ( value ) => {
-  let _sql = "insert into posts set name=?,title=?,content=?,md=?,uid=?,moment=?,avator=?;"
+  let _sql = "insert into posts set name=?,title=?,content=?,md=?,uid=?,moment=?,avatar=?;"
   return query( _sql, value )
 }
 // 更新文章评论数
@@ -123,7 +123,7 @@ exports.updatePostPv = ( value ) => {
 
 // 发表评论
 exports.insertComment = ( value ) => {
-  let _sql = "insert into comment set name=?,content=?,moment=?,postid=?,avator=?;"
+  let _sql = "insert into comment set name=?,content=?,moment=?,postid=?,avatar=?;"
   return query( _sql, value )
 }
 // 通过名字查找用户

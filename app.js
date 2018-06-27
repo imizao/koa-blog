@@ -51,7 +51,7 @@ app.use(bodyParser({
 app.use(require('./routers/index.js').routes())
 app.use(require('./routers/login.js').routes())
 app.use(require('./routers/reg.js').routes())
-
+app.use(require('./routers/edit.js').routes())
 
 app.listen(3000)
 
