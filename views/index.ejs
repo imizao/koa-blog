@@ -8,6 +8,7 @@
   <title>首页</title>
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/jquery.min.js"></script>
 </head>
 <body >
   <% if(session) { %>
@@ -45,24 +46,30 @@
           </div>
         </div>
       </div>
-      <div class="mz-postlist-item">
-        <h2 class="mz-post-title">
-          <a href="./page.html">金融PM须知：理财公司业务模式剖析</a>
-        </h2>
-        <p class="mz-des">作为金融产品经理，我们都应知道的理财公司业务模式。enjoy~ P2P行业近几年来在金融领域内的崛起有目共睹，虽然不少公司出现了跑路情况，但这种投资理财模式也已经被普...</p>
-        <div class="mz-mate">
-          <!-- <span class="mz-avatar-inline">
-            <a href="javascript:;">
-              <img src="./img/user-img.jpg" alt="">
-            </a>
-          </span> -->
-          <span class="mz-author-name">
-            <a href="javascript:;">蜜枣</a>
-          </span>
-          <span class="mz-dot"></span>
-          <span>2018/4/2</span>
-        </div>
-      </div>
+      <% if(article.length > 0){ %>
+        <% article.forEach(function (res) {%>
+        <div class="mz-postlist-item">
+            <h2 class="mz-post-title">
+              <a href="./page.html"><%- res.title %></a>
+            </h2>
+            <p class="mz-des">
+              <%- res.content %>
+            </p>
+            <div class="mz-mate">
+              <!-- <span class="mz-avatar-inline">
+                <a href="javascript:;">
+                  <img src="./img/user-img.jpg" alt="">
+                </a>
+              </span> -->
+              <span class="mz-author-name">
+                <a href="javascript:;"><%= res.name %></a>
+              </span>
+              <span class="mz-dot"></span>
+              <span><%= res.moment %></span>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
       <nav class="mz-nav">
         加载更多
       </nav>
@@ -131,5 +138,14 @@
       </div>
     </div>
   </footer>
+  <script>
+    $.ajax({
+      url:'/index',
+      type: 'GET',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  </script>
 </body>
 </html>

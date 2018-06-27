@@ -37,6 +37,7 @@ exports.postEdit = async ctx => {
   await Mysql.findUserData(ctx.session.user)
     .then(res => {
       avatar = res[0]['avatar']
+     console.log(res);
     })
   await Mysql.insertPost([name, newTitle, md.render(content), content, id, time, avatar])
     .then(() => {

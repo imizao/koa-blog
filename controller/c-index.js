@@ -9,8 +9,22 @@ exports.getRedirectIndex = async ctx => {
 }
 
 exports.getIndex = async ctx => {
-  await ctx.render('index',{
-    session: ctx.session
+  let res,
+    indexLength,
+    name = decodeURIComponent(ctx.request.querystring.split('=')[1]);
+  await Mysql.findPostByPage(1)
+    .then(result => {
+        res = result
+    })
+  await Mysql.findAllPost()
+    .then(result => {
+        indexLength = result.length
+    })
+  await ctx.render('index', {
+    session: ctx.session,
+    article: res,
+    indexLength: indexLength,
+    indexPageLength: Math.ceil(indexLength / 10),
   })
-  console.log(ctx.session);
 }
+
