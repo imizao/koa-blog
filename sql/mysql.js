@@ -159,7 +159,7 @@ exports.findAllPost =  () => {
 }
 // 查询分页文章
 exports.findPostByPage =  ( page ) => {
-  let _sql = ` select * from posts limit ${(page-1)*10},10;`
+  let _sql = ` select * from posts order by id desc limit ${(page-1)*10},10;`
   return query( _sql)
 }
 // 查询个人分页文章
