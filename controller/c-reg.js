@@ -37,7 +37,7 @@ exports.postSignup = async ctx => {
                 };
             } else {
                 let base64Data = avatar.replace(/^data:image\/\w+;base64,/, "");
-                let dataBuffer = new Buffer(base64Data, 'base64');
+                let dataBuffer = new Buffer.from(base64Data, 'base64');
                 let getName = Number(Math.random().toString().substr(3)).toString(36) + Date.now()
                 let upload = await new Promise((reslove, reject) => {
                     fs.writeFile('./public/img/' + getName + '.png', dataBuffer, err => {
