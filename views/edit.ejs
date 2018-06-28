@@ -11,6 +11,7 @@
   <script src="./js/jquery.min.js"></script>
 </head>
 <body>
+  <div class="message">登录成功</div>
   <header class="mz-navbar">
     <div class="mz-navbar-logo"></div>
     <div class="mz-navbar-title">写文章</div>
@@ -35,6 +36,17 @@
     </div>
   </footer>
   <script>
+    function fade(txt){
+			$('.message').text(txt)
+			$('.message').animate({
+				top: '10px'
+			})
+			setTimeout(function(){
+				$('.message').animate({
+					top: '-50px'
+				})
+			},1500)
+		}
     $('#release').click(function () {
       var aTitle = $('#title').val();
       var aCon = $('#content').val();
@@ -46,7 +58,14 @@
         },
         type: 'POST',
         success: function (res) {
-          console.log(res);
+          if(res.code === 200) {
+            fade(res.message)
+            setTimeout(function(){
+							window.location.href = "/index"
+						},1000)
+          }else{
+            fade(res.message)
+          }
         }
       })
     })
