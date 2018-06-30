@@ -2,14 +2,7 @@
 .mz-navbar-title{margin: 0 auto;width: 660px;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;white-space: nowrap;line-height: 59px;}
 .mz-navbar-release{position: absolute;top: 15px;right: 100px;width: 75px;height: 29px;box-sizing: border-box;color: gray;border: 1px solid rgb(163, 161, 161);border-radius: 5px;cursor: pointer;}
 .mz-edit-main{margin: 47px auto 0;padding: 0;width: 660px;z-index: 1;}
-.mz-edit-write{
-  position: relative;
-  margin: 16px 0;
-  border: 0;
-  padding: 0;
-  height: auto;
-  width: 100%;
-}
+.mz-edit-write{position: relative;margin: 16px 0;border: 0;padding: 0;height: auto;width: 100%;}
 .Input{
   height: 44px;
   min-height: 44px;
